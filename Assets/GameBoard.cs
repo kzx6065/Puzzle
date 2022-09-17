@@ -37,4 +37,36 @@ public class GameBoard : MonoBehaviour
             images[i].sprite = sprites[i];
         }
     }
+
+    public Texture2D targetImage;
+    public int xCount = 3;
+    public int yCount = 4;
+    public List<Sprite> resultSprite;
+    public int width;
+    public int height;
+
+    [ContextMenu("이미지 생성")]
+    void CreateSprite()
+    {
+        //sprites 생성한 이미지 할당.
+        //resultSprite = Sprite.Create(targetImage, rect, new Vector2(0.5f, 0.5f));
+
+        resultSprite.Clear();
+        width = targetImage.width / xCount;
+        height = targetImage.height / yCount;
+
+        for (int y = 0; y < yCount; y++)
+        {
+            for (int x = 0; x < xCount; x++)
+            {
+                Rect rect = new Rect();
+                rect.x = x * width;
+                rect.y = y * height;
+                rect.width = width;
+                rect.height = height;
+
+                resultSprite.Add(Sprite.Create(targetImage, rect, new Vector2(0.5f, 0.5f)));
+            }
+        }
+    }
 }
