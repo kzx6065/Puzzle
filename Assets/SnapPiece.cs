@@ -18,6 +18,9 @@ public class SnapPiece : MonoBehaviour, IDropHandler
             if (IsRightPosition(eventData.pointerDrag))
             {
                 setBlink(eventData.pointerDrag);
+
+                //점수증가
+                GameBoard.instance.AddScore();
             }
         }
     }
