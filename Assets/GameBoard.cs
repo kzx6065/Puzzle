@@ -34,7 +34,7 @@ public class GameBoard : MonoBehaviour
         print("SetImage");
         for(int i = 0; i < sprites.Length; i++)
         {
-            images[i].sprite = sprites[i];
+            images[i].sprite = resultSprite[i]; //sprites[i];
         }
     }
 
