@@ -7,7 +7,7 @@ public class RandomSetter : MonoBehaviour
 {
     [ContextMenu("이미지 랜덤한 위치에 배치")]
     
-    void SetRandomPosition()
+    public void SetRandomPosition()
     {
         var allChildImage = transform.GetComponentsInChildren<Image>();
 
